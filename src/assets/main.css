@@ -25,6 +25,9 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
 }
 
 .header .header__wrap .header__nav {
@@ -32,6 +35,9 @@
   display: -ms-flexbox;
   display: flex;
   list-style-type: none;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .header .header__wrap .header__nav * ~ * {
@@ -61,7 +67,7 @@
   -webkit-transition: width 0.5s ease;
   transition: width 0.5s ease;
   height: 2px;
-  background-color: #121212;
+  background-color: #ff0000;
 }
 
 .header .header__wrap .header__nav li.active::after, .header .header__wrap .header__nav li:hover::after {

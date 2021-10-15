@@ -20,10 +20,12 @@
   .header__wrap {
     display: flex;
     justify-content: space-between;
+    align-items: end;
 
     .header__nav {
       display: flex;
       list-style-type: none;
+      height: fit-content;
       
       * ~ * {
         margin-left: 2rem;
@@ -49,7 +51,7 @@
           width: 0;
           transition: width 0.5s ease;
           height: 2px;
-          background-color: #121212;
+          background-color: #ff0000;
         }
       
         &.active::after,
