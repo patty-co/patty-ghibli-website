@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from 'react';
 
 import { Link, useLocation } from 'react-router-dom';
 
+import logo from '../assets/white logo.png'
+
 const headerNav =[
 	{
 		display: 'Films',
@@ -50,7 +52,7 @@ const Header = () => {
 			<div className="header__wrap container">
 				<div className="logo">
 					<Link to='/'>
-						<img src="white logo.png" alt="Studio Ghibli Logo"></img>
+						<img src={logo} alt="Studio Ghibli Logo"></img>
 					</Link>
 				</div>
 				<ul className="header__nav">
