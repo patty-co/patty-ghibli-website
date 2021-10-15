@@ -6,9 +6,7 @@
   background-color: #121212;
 }
 
-header {
-  padding-top: 50px;
-  padding-bottom: 50px;
+.header {
   max-height: 200px;
 
   img {
@@ -18,6 +16,52 @@ header {
     width: auto;
     max-height: 100px;
   }
+
+  .header__wrap {
+    display: flex;
+    justify-content: space-between;
+
+    .header__nav {
+      display: flex;
+      list-style-type: none;
+      
+      * ~ * {
+        margin-left: 2rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      li {
+        padding: 5px 0;
+        font-weight: 700;
+        position: relative;
+        font-size: 1.5rem;
+    
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          transition: width 0.5s ease;
+          height: 2px;
+          background-color: #121212;
+        }
+      
+        &.active::after,
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  
+  }
+
+  
 }
 
 .anime-card a {
