@@ -4,10 +4,6 @@ import { Link, useLocation } from 'react-router-dom';
 
 const headerNav =[
 	{
-		display: 'Home',
-		path: '/'
-	},
-	{
 		display: 'Films',
 		path: '/films'
 	},
@@ -53,8 +49,9 @@ const Header = () => {
 		<div ref={headerRef} className="header">
 			<div className="header__wrap container">
 				<div className="logo">
-					<img src="white logo.png" alt="Studio Ghibli Logo"></img>
-					
+					<Link to='/'>
+						<img src="white logo.png" alt="Studio Ghibli Logo"></img>
+					</Link>
 				</div>
 				<ul className="header__nav">
 					{
