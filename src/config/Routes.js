@@ -2,11 +2,14 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Home from '../pages/Home';
-import Film from '../pages/Film';
+import FilmIndex from '../pages/Film/index';
+import FilmDetails from '../pages/Film/details';
 import Specie from '../pages/Specie';
 import Location from '../pages/Location';
 import Person from '../pages/Person';
 import Vehicle from '../pages/Vehicle';
+
+const NoMatchRoute = () => <div>404 Page</div>;
 
 function Routes() {
   return (
@@ -18,7 +21,12 @@ function Routes() {
       />
       <Route
         path='/films'
-        component={Film}
+        component={FilmIndex}
+      />
+      <Route
+        path="/film/:filmId"
+        exact 
+        component={FilmDetails}
       />
       <Route
         path='/locations'
@@ -35,6 +43,9 @@ function Routes() {
       <Route
         path='/vehicles'
         component={Vehicle}
+      />
+      <Route 
+        component={NoMatchRoute} 
       />
     </Switch>
   )
