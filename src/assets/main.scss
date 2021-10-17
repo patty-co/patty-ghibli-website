@@ -66,7 +66,33 @@
   
 }
 
-.col-md-6 {
+.card {
+  height: 100%;
+  
+  .detail {
+    margin-left: 1rem;
+  }
+
+  .sr-only {
+    visibility: hidden;
+  }
+
+  .carousel-item {
+    height: 300px;
+  }
+
+  // .height300 {
+  //   margin-left: auto;
+  //   margin-right: auto;
+  //   // width: auto !important;
+  //   // object-fit: contain;
+  //   // height: 300px;
+  //   width: auto;
+  //   height: 100%
+  // }
+}
+
+.col-md-4, .col-md-6, .col-md-8, .col-md-12 {
   margin-bottom: 20px;
 }
 

@@ -12,6 +12,15 @@ const ghibliApi = {
   getFilmList: () => {
     const url = 'films';
     return axiosClient.get(url)
+  },
+
+  getFilm: (id) => {
+    const url = `films/${id}`;
+    return axiosClient.get(url)
+  },
+
+  getWithLink(url) {
+    return axiosClient.get(url);
   }
 }
 

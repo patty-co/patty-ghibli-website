@@ -22,7 +22,7 @@ const FilmIndex = () => {
     <Container>
       <Row>
         <Col md={12}>
-          <h1 class="text-center">All Films</h1>
+          <h1 className="text-center">All Films</h1>
         </Col>
       </Row>
       <Row> 
@@ -31,7 +31,7 @@ const FilmIndex = () => {
             <Col md={4} key={i}>
               <Card>
                 <Card.Body>
-                  <Card.Img className="mb-2" src={film.image} />
+                <Link to={`/film/${film.id}`}><Card.Img className="mb-2" src={film.image} /></Link>
                   <Card.Title>{film.title}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">{film.original_title}</Card.Subtitle>
                   <Link to={`/film/${film.id}`}>Show details</Link>
