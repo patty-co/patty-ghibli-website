@@ -5,7 +5,6 @@ function Card({title, image, link}) {
     <article className="anime-card">
 			<a 
 				href={link}
-				target="_blank" 
 				rel="noreferrer">
 				<figure>
 					<img 

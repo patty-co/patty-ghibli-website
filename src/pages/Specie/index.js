@@ -4,16 +4,15 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 
 import ghibliApi from '../../api/ghibliApi'
 
-const FilmIndex = () => {
-
-  const [films, setFilms] = useState([]);
-
+const SpecieIndex = () => {
+  const [species, setSpecies] = useState([]);
+  
   useEffect(() => {
     const getList = async () => {
       let response = null;
 
-      response = await ghibliApi.getFilmList();
-      setFilms(response)
+      response = await ghibliApi.getSpecieList();
+      setSpecies(response)
     }
     getList();
   }, []);
@@ -22,19 +21,17 @@ const FilmIndex = () => {
     <Container>
       <Row>
         <Col md={12}>
-          <h1 className="text-center">All Films</h1>
+          <h1 className="text-center">All Species</h1>
         </Col>
       </Row>
       <Row> 
         {
-          films.map((film, i) => (
+          species.map((specie, i) => (
             <Col md={4} key={i}>
               <Card>
                 <Card.Body>
-                <Link to={`/films/${film.id}`}><Card.Img className="mb-2" src={film.image} /></Link>
-                  <Card.Title>{film.title}</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">{film.original_title}</Card.Subtitle>
-                  <Link to={`/films/${film.id}`}>Show details</Link>
+                  <Card.Title>{specie.name}</Card.Title>
+                  <Link to={`/species/${specie.id}`}>Show details</Link>
                 </Card.Body>
               </Card>
             </Col>
@@ -45,4 +42,4 @@ const FilmIndex = () => {
   )
 }
 
-export default FilmIndex
+export default SpecieIndex

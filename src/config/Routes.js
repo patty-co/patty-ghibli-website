@@ -4,10 +4,14 @@ import { Route, Switch } from 'react-router-dom';
 import Home from '../pages/Home';
 import FilmIndex from '../pages/Film/index';
 import FilmDetails from '../pages/Film/details';
-import Specie from '../pages/Specie';
-import Location from '../pages/Location';
-import Person from '../pages/Person';
-import Vehicle from '../pages/Vehicle';
+import LocationIndex from '../pages/Location/index';
+import LocationDetails from '../pages/Location/details';
+import PersonIndex from '../pages/Person/index';
+import PersonDetails from '../pages/Person/details';
+import SpecieIndex from '../pages/Specie/index';
+import SpecieDetails from '../pages/Specie/details';
+import VehicleIndex from '../pages/Vehicle/index';
+import VehicleDetails from '../pages/Vehicle/details';
 
 const NoMatchRoute = () => <div>404 Page</div>;
 
@@ -21,28 +25,53 @@ function Routes() {
       />
       <Route
         path='/films'
+        exact 
         component={FilmIndex}
       />
       <Route
-        path="/film/:filmId"
+        path="/films/:filmId"
         exact 
         component={FilmDetails}
       />
       <Route
         path='/locations'
-        component={Location}
+        exact 
+        component={LocationIndex}
+      />
+      <Route
+        path='/locations/:locationId'
+        exact 
+        component={LocationDetails}
       />
       <Route
         path='/people'
-        component={Person}
+        exact 
+        component={PersonIndex}
+      />
+      <Route
+        path='/people/:personId'
+        exact 
+        component={PersonDetails}
       />
       <Route
         path='/species'
-        component={Specie}
+        exact 
+        component={SpecieIndex}
+      />
+      <Route
+        path='/species/:specieId'
+        exact 
+        component={SpecieDetails}
       />
       <Route
         path='/vehicles'
-        component={Vehicle}
+        exact 
+        component={VehicleIndex}
+      />
+      <Route
+        path='/vehicles/:vehicleId'
+        exact 
+        component={VehicleDetails}
       />
       <Route 
         component={NoMatchRoute} 

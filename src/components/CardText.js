@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import ghibliApi from '../api/ghibliApi'
 
-function ListItem({link}) {
+function CardText({link}) {
 
   const [item, setItem] = useState({
     loading: false,
@@ -18,7 +18,6 @@ function ListItem({link}) {
 
     const getItem = async () => {
       let response = null;
-
       response = await ghibliApi.getWithLink(link);
       setItem({
         loading: false,
@@ -31,20 +30,17 @@ function ListItem({link}) {
   let content = null;
 
   if(item.data) {
-    
     if(item.data.length > 0) {
-      content = <p>There are no items</p>
+      content = "There are no items"
     } else {
       let type = item.data.url.split('/')[3];
-      content = <ul><li><Link to={`/${type}/${item.data.id}`}>{item.data.name ?? item.data.title}</Link></li></ul>
+      content = <Link to={`/${type}/${item.data.id}`}>{item.data.name ?? item.data.title}</Link>
     }
   }
 
   return (
-    <div>
-      {content}
-    </div>
+    <p className="mb-2 detail card-text">{content}</p>
   )
 }
 
-export default ListItem
+export default CardText
